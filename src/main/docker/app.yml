@@ -1,0 +1,15 @@
+version: '2'
+services:
+    ooooadoooo-app:
+        image: ooooadoooo
+        external_links:
+            - ooooadoooo-mysql:mysql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/ooooadoooo?useUnicode=true&characterEncoding=utf8&useSSL=false
+        ports:
+            - 8080:8080
+    ooooadoooo-mysql:
+        extends:
+            file: mysql.yml
+            service: ooooadoooo-mysql
