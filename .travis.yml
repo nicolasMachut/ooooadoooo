@@ -1,12 +1,19 @@
 language: node_js
 node_js:
-  - "4.4.3"
+- 4.4.3
 sudo: false
 before_install: npm install -g gulp
 install: npm install
 before_script: gulp build
 notifications:
   webhooks:
-    on_success: change  # options: [always|never|change] default: always
-    on_failure: always  # options: [always|never|change] default: always
-    on_start: false     # default: false
+    on_success: change
+    on_failure: always
+    on_start: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: c09L/4f/8SoILXJxmv06x4sZQxu5iIbBOWZ9W2zNCn3Wunc2LzOa3/3jo6BFmGOti7A6XzVhGUI68yMZXL1r4wwnJ3DVUOTBICVaKdi9iFDmDtsF0z/hAZy/3UZjQQsiaxXacVdhcIozA3NbiNNzTCdL32OwbYujAPPNq8zvujariivKO+fjWLoE6lKJ2XOSTGJWZ9Tr0cz7hURmL8x/M+TbUbPAlV1LzzVJlepKRU08VhJIwO/yPbMYqH5augRnGL20hjvnV/KLDTb9bvJdXRA+Jhs85qkEvzKZRlaD1yQoqDn8X0SHatEHWgenNfdOS/VrqZexjrganmB+7pXM6ySNjPn7V2/Z3cZDmjLbSuNxd3BmLg3Dqe3ImyCRJuIxrT1sopd8zVPa2SFeuasTlIkH/z9s5lB/DfNX6YdCcW0uOJtZj/7e+8XwKSk6D+0Ay1R0eok1LoIdHo0fBmleyWfR5Nk9nose3LNAm6tZmbob5u4hQwjk3KHr6meUyH2rHF7DWIOLx0/X3h5bkuC7iqAxPUQJ/BranLBq6nF6/a7SQD1U7uBq/vAHX/bGdujZQ2MNPc6iUoabdo7lnZvR0DQKzDIq/UPcHG+Ro8ijiH9dkMRBy5gzB+d3zht1pXk6tkgPipNQxxM4ENMhaCOODwXa1+v8crpozZFi7wudSqg=
+  app: ooooadoooo
+  on:
+    repo: nicolasMachut/ooooadoooo
